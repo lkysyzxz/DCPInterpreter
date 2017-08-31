@@ -1,4 +1,15 @@
 #pragma once
+/***
+ *	Autor:º®½­Ñ©1719
+ *	Date : 2017.8.24
+ *	Email : <lkysyzxz@outlook.com>
+ *	******
+ *	Update : 2017.8.27
+ *	Update : 2017.8.28
+ *	Update : 2017.8.29
+ *	Update : 2017.8.30
+ *	Update : 2017.8.31
+ */
 #include<iostream>
 #include<string>
 #include<stack>
@@ -109,6 +120,11 @@ namespace STRING_TOOL
 		}
 		return -1;
 	}
+
+	bool IsSpace(char target)
+	{
+		return ((target >= 0 && target <= 32) || target == 127);
+	}
 }
 
 namespace CONVERT_TOOL
@@ -170,7 +186,7 @@ namespace ACCOUNTING_TOOL
 		string res = STRING_TOOL::SubString(0, line, str.c_str());
 		return res;
 	}
-	
+
 	string GetSecondSubject(const string &str)
 	{
 		int line = STRING_TOOL::Match(0, '-', str.c_str());
@@ -178,7 +194,7 @@ namespace ACCOUNTING_TOOL
 		{
 			return str;
 		}
-		string res = STRING_TOOL::SubString(line+1, str.size(), str.c_str());
+		string res = STRING_TOOL::SubString(line + 1, str.size(), str.c_str());
 		return res;
 	}
 

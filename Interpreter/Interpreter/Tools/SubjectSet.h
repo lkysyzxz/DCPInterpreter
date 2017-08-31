@@ -1,4 +1,14 @@
 #pragma once
+/******
+ *	该文件中包含的是关于科目的属性和科目列表
+ *	其中SubjectProperty保存的是科目属性描述
+ *	SubjectSet保存的是科目的描述列表,通过科目名进行查询可以找到属性描述信息
+ *	Autor:寒江雪1719
+ *	Date:2017.8.30
+ *	Email:<lkysyzxz@outlook.com>
+ *	******
+ *	Update:2017.8.30
+ */
 #include<iostream>
 #include<string>
 #include<map>
@@ -27,6 +37,8 @@ class SubjectSet
 public:
 	static map<string, SubjectProperty> SubjectTable;
 public:
+	//从文件中读取科目描述表
+	//第一个版本只从文本中读取
 	static bool InitSubjects()
 	{
 		ifstream fin("Subjects.txt");

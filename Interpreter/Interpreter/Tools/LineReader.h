@@ -1,4 +1,20 @@
 #pragma once
+/**
+ *	这个文件中保存的代码是行阅读器的类描述
+ *	包含了抽象类LineReader及其派生类JLineReader和DLineReader
+ *	这三个类都是为会计分录的描述设计的
+ *	读取逻辑由LineReader定义,按行读取每一行描述，并按照语法规则解析它保存到currentLine变量中
+ *	处理每一行的逻辑由派生类定义,JLineReader和DLineReader分别定义了该如何解析每一行
+ *	由于语法规则类似，只是借贷符号不一样的缘故， JLineReader和DLineReader是一样的
+ *	该类保证读取并解析到的描述是符合要求的
+ *	因此处理逻辑和验证逻辑同时存在
+ *	当读到不符合规格的描述时，即时报错并返回错误标识
+ *	Autor:寒江雪1719
+ *	Date:2017.8.27
+ *	Email:<lkysyzxz@outlook.com>
+ *	******
+ *	Update:2017.8.31
+ */
 #include<fstream>
 #include<vector>
 #include<string>
@@ -16,6 +32,10 @@ using std::stringstream;
 using std::map;
 using std::pair;
 
+/*****
+ *	LineReader负责从文件中按行读取描述
+ *	只负责读取和提供验证方法，不负责处理
+ */
 class LineReader
 {
 protected:
@@ -23,21 +43,24 @@ protected:
 protected:
 	int m_currentLineNumber;
 	string m_currentLine;
-	queue<string> m_subjects;
-	queue<string> m_money;
+	queue<string> m_subjects;	//读取到的科目队列
+	queue<string> m_money;	//读取到的金额队列
 
-	vector<string> m_correctSubjects;
-	vector<string> m_correctMoney;
+	vector<string> m_correctSubjects;	//经过验证正确的科目列表
+	vector<string> m_correctMoney;	//经过验证正确的金额列表
 
+	//将buffer中的内容复制到currentLine中，忽略其中的空白字符
 	void CopyToCurrentLine(string &currentLine, string &buffer)
 	{
 		for (int i = 0; i < buffer.size(); i++)
 		{
-			if (buffer[i] != ' ')
+			if (!STRING_TOOL::IsSpace(buffer[i]))
 				currentLine += buffer[i];
 		}
 	}
 
+	//找到当前行结束位置的下标
+	//如果找不到则返回-1
 	int FindCurrentLineEnd(int startPos, string &currentLine)
 	{
 		for (int i = startPos; i < currentLine.size(); i++)
@@ -50,10 +73,10 @@ protected:
 		return -1;
 	}
 protected:
-	queue<string> &const Subjects;
-	queue<string> &const Money;
-	vector<string> &const CSubjects;
-	vector<string> &const CMoney;
+	queue<string> &const Subjects;	
+	queue<string> &const Money;		
+	vector<string> &const CSubjects;	
+	vector<string> &const CMoney;		
 public:
 	LineReader() :m_currentLineNumber(0),
 		Subjects(m_subjects),
@@ -64,6 +87,9 @@ public:
 
 	}
 
+	//从fin中读取文字，按行读取
+	//一直读到行末尾
+	//按语法定义，这里的末尾指的是分号或者逗号，而多余的字符被认为是非法的
 	void ReadLine(ifstream &fin)
 	{
 		std::getline(fin, buffer);
@@ -80,8 +106,12 @@ public:
 		}
 	}
 
+	//处理当前行，由派生类提供实现
 	virtual bool ProcessCurrentLine(int startPos) = 0;
 
+	//验证当前位于顶部的科目
+	//该方法会在科目验证不通过的时候报错并返回false
+	//所有科目验证通过后会保存在CSubject中，队列将被清空
 	bool VolidateTopSubject()
 	{
 		string subject = Subjects.front();
@@ -139,6 +169,8 @@ public:
 		return true;
 	}
 
+	//验证输入的金额是不是合法的浮点数或整数
+	//如果输入的金额含有非法字符或极其恶劣的格式将返回false
 	bool VolidateTopMoney()
 	{
 		while (!Money.empty()) {
@@ -199,11 +231,13 @@ public:
 		return true;
 	}
 
+	//获取当前行号
 	int GetCurrentLine()
 	{
 		return m_currentLineNumber;
 	}
 
+	//设置当前行号
 	void SetCurrentLine(int x)
 	{
 		m_currentLineNumber = x;
@@ -212,21 +246,22 @@ public:
 	////测试函数
 	//virtual void PrintData() = 0;
 
+	//获取当前经过验证的科目列表
 	const vector<string>& GetCSubjects()
 	{
 		return CSubjects;
 	}
-
+	//获取当前经过验证的金额列表
 	const vector<string>& GetCMoney()
 	{
 		return CMoney;
 	}
-
+	//清空正确的科目列表
 	void ClearCSubjects()
 	{
 		CSubjects.clear();
 	}
-
+	//清空正确的金额列表
 	void ClearCMoney()
 	{
 		CMoney.clear();
@@ -235,6 +270,10 @@ public:
 };
 string LineReader::buffer = "";
 
+/****
+ *	JLineReader负责读取记账符号为'借'的行
+ *	只负责读取，不负责计算
+ */
 class JLineReader :public LineReader
 {
 public:
@@ -338,6 +377,10 @@ public:
 	}
 };
 
+/****
+*	DLineReader负责读取记账符号为'贷'的行
+*	只负责读取，不负责计算
+*/
 class DLineReader :public LineReader
 {
 public:
