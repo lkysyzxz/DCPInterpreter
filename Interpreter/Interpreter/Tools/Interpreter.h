@@ -3,16 +3,19 @@
  *	该文件提供解释器的类描述
  *	AccountingInterpreter使用策略模式将所有操作封装供外部调用
  *	用户不需要知道内部操作如何实现
-  *	Autor:寒江雪1719
+ *	重写InterpreterOperation的操作，使用文件缓存来输出源文件处理得到的中间文件(.dcpm)
+ *	Autor:寒江雪1719
  *	Date:2017.8.31
  *	Email:<lkysyzxz@outlook.com>
  *	******
  *	Update:2017.8.31
+ *	Update:2017.9.2
  */
 #include"AccountingBalance.h"
 #include"LineReader.h"
 #include"SubjectSet.h"
 #include"Tools.h"
+#include"FileCache.h"
 #include<string>
 #include<iostream>
 #include<map>
@@ -25,6 +28,9 @@ using std::map;
 using std::pair;
 using std::vector;
 using std::exception;
+using std::ofstream;
+using std::ios;
+using std::fstream;
 
 class AccountingInterpreter
 {
@@ -283,6 +289,71 @@ protected:
 		return true;
 	}
 
+	bool CreateMiddleFile(string filename)
+	{
+		ofstream fout(filename, ios::ate | ios::binary);
+		if (fout.is_open())
+		{
+			fout.close();
+			return true;
+		}
+		else
+		{//文件不存在
+			fout.close();
+			throw exception(("Can't not open " + filename).c_str());
+			return false;
+		}
+
+	}
+
+	string GetMiddleFileName(string fileName)
+	{
+		int point = STRING_TOOL::Match(0, '.', fileName.c_str());
+		if (point == -1)
+		{
+			throw exception("文件名缺少后缀");
+		}
+		else
+		{
+			string res = STRING_TOOL::SubString(0, point, fileName.c_str()) + ".dcpm";
+			return res;
+		}
+	}
+
+	bool AppendToFileCache(const vector<string> &csubjects,
+		const vector<string> &cmoney,
+		const vector<string> &dsubjects,
+		const vector<string> &dmoney, FileCache &fileCache)
+	{
+		int fileEndFlag;
+		if (fileCache.Size() > 0)
+			fileCache.PopInt(fileEndFlag);
+		else if (fileCache.Size() == 0)
+		{
+			fileCache.PushInteger(-1);
+			fileEndFlag = -2;
+		}
+		fileCache.PushInteger(-3);
+		for (int i = 0; i < csubjects.size(); i++)
+		{
+			string firstSubject = ACCOUNTING_TOOL::GetFirstSubject(csubjects[i]);
+			fileCache.PushInteger(-5);
+			fileCache.PushInteger(0); 
+			fileCache.PushInteger(SubjectSet::SubjectToNumber.find(firstSubject)->second);
+			fileCache.PushDouble(CONVERT_TOOL::StringToDouble(cmoney[i]));
+		}
+		for (int i = 0; i < dsubjects.size(); i++)
+		{
+			string firstSubject = ACCOUNTING_TOOL::GetFirstSubject(dsubjects[i]);
+			fileCache.PushInteger(-5);
+			fileCache.PushInteger(1);
+			fileCache.PushInteger(SubjectSet::SubjectToNumber.find(firstSubject)->second);
+			fileCache.PushDouble(CONVERT_TOOL::StringToDouble(dmoney[i]));
+		}
+		fileCache.PushInteger(-4);
+		fileCache.PushInteger(fileEndFlag);
+		return true;
+	}
 public:
 	AccountingInterpreter()
 	{
@@ -296,6 +367,9 @@ public:
 			bool bl_res = true;
 			int it_res = 0;
 			SetFile(filePath);
+			string midFile = GetMiddleFileName(filePath);
+			CreateMiddleFile(midFile);
+			FileCache fileCache;
 			while (!fin.eof()) {
 				it_res = ReadJLine();
 				if (it_res == -2)
@@ -312,22 +386,18 @@ public:
 				CopyJCMoney();
 				CopyDCSubjects();
 				CopyDCMoney();
-				OutputToConsole(
-					JReader.GetCSubjects(),
+				AppendToFileCache(JReader.GetCSubjects(),
 					JReader.GetCMoney(),
 					DReader.GetCSubjects(),
-					DReader.GetCMoney());
+					DReader.GetCMoney(), fileCache);
 				ClearAllReader();
 			}
-			//OutputAsExcel();
-			//OutputToConsole();
+			fileCache.OutputToFile(midFile);
 			fin.close();
 		}
 		catch (exception e)
 		{
 			MESSAGE_TOOL::ErrorNotify(e.what());
 		}
-
 	}
-
 };
