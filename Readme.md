@@ -10,3 +10,8 @@
         *  After that,fix some bug.
         *  Change STRING_TOOL::IsNum function.It can ignore character that can't not been seen.(ASCII:0~32 and 127)
         *  Have fun~!!
+* 2017.9.2
+    * 寒江雪1719
+        * Create FileCache.h
+        * Alter class——AccountingInterpreter
+        * Change output file format.All process result will ouput as middle file(.dcpm)
