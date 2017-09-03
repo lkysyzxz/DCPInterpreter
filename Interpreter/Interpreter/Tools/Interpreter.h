@@ -162,6 +162,10 @@ protected:
 		}
 		else
 		{
+			return true;
+		}
+		/*else
+		{
 			for (int i = 0; i < JSubjects.size(); i++)
 			{
 				cout << JSubjects[i];
@@ -181,7 +185,7 @@ protected:
 			}
 			cout << "Balance" << endl << endl;
 			return true;
-		}
+		}*/
 	}
 
 	bool CopyJCSubjects()
@@ -414,11 +418,14 @@ public:
 				if (it_res == -2)
 					continue;
 				else if (it_res == -1)
+				{
+					throw exception("JLineReader Error");
 					break;
-
+				}
 				it_res = ReadDLine();
-				if (it_res == -1)
+				if (it_res == -1) {
 					break;
+				}
 				if (!ValidateBalace())
 					break;
 				CopyJCSubjects();

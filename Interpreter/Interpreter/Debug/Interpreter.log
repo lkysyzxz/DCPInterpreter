@@ -1,0 +1,37 @@
+﻿  InterpreterMain.cpp
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\Tools.h(164): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\Tools.h(184): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\SubjectSet.h(37): warning C4091: “static ”: 没有声明变量时忽略“SubjectProperty”的左侧
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(26): warning C4091: “extern ”: 没有声明变量时忽略“SubjectProperty”的左侧
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(76): warning C4227: 使用了记时错误: 忽略引用上的限定符
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(77): warning C4227: 使用了记时错误: 忽略引用上的限定符
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(78): warning C4227: 使用了记时错误: 忽略引用上的限定符
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(79): warning C4227: 使用了记时错误: 忽略引用上的限定符
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(55): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(66): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(215): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(350): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(351): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(367): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(455): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(456): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\LineReader.h(472): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(123): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(142): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(194): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(204): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(214): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(224): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(252): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(254): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(260): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(281): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(283): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(289): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(380): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\Tools\Interpreter.h(388): warning C4018: “<”: 有符号/无符号不匹配
+InterpreterMain.cpp(10): warning C4018: “<”: 有符号/无符号不匹配
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\interpreter.h(88): warning C4715: “AccountingInterpreter::ReadJLine”: 不是所有的控件路径都返回值
+c:\code\git\dcpinterpreter\interpreter\interpreter\tools\interpreter.h(114): warning C4715: “AccountingInterpreter::ReadDLine”: 不是所有的控件路径都返回值
+  .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+  Interpreter.vcxproj -> C:\Code\Git\DCPInterpreter\Interpreter\Debug\Interpreter.exe

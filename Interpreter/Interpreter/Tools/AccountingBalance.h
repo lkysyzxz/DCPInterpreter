@@ -1,5 +1,6 @@
 #pragma once
 #include<cmath>
+#include"Tools.h"
 const double ERR = 0.0001;
 /*****
  *	AccountingBalance

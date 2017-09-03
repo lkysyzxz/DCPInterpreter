@@ -30,6 +30,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -146,7 +147,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Tools\AccountingBalance.h" />
+    <ClInclude Include="Tools\Excel.h" />
+    <ClInclude Include="Tools\FileCache.h" />
+    <ClInclude Include="Tools\Interpreter.h" />
+    <ClInclude Include="Tools\LineReader.h" />
+    <ClInclude Include="Tools\SubjectSet.h" />
     <ClInclude Include="Tools\Tools.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="InterpreterMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

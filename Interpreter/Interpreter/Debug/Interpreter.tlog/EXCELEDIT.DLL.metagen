@@ -1,0 +1,421 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly ExcelEdit, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class Microsoft.Operation.ExcelEdit: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String mFilename : Public
+    Microsoft.Office.Interop.Excel.Application app : Public
+    Microsoft.Office.Interop.Excel.Workbooks wbs : Public
+    Microsoft.Office.Interop.Excel.Workbook wb : Public
+    Microsoft.Office.Interop.Excel.Worksheets wss : Public
+    Microsoft.Office.Interop.Excel.Worksheet ws : Public
+  Methods:
+    Create(): PrivateScope, Public, HideBySig
+    Open(String): PrivateScope, Public, HideBySig
+    GetSheet(String): PrivateScope, Public, HideBySig
+    AddSheet(String): PrivateScope, Public, HideBySig
+    DelSheet(String): PrivateScope, Public, HideBySig
+    ReNameSheet(String, String): PrivateScope, Public, HideBySig
+    ReNameSheet(Worksheet, String): PrivateScope, Public, HideBySig
+    SetCellValue(Worksheet, Int32, Int32, Object): PrivateScope, Public, HideBySig
+    SetCellValue(String, Int32, Int32, Object): PrivateScope, Public, HideBySig
+    SetCellProperty(Worksheet, Int32, Int32, Int32, Int32, Int32, String, Constants, Constants): PrivateScope, Public, HideBySig
+    SetCellProperty(String, Int32, Int32, Int32, Int32, Int32, String, Constants, Constants): PrivateScope, Public, HideBySig
+    DisableAlert(): PrivateScope, Public, HideBySig
+    UniteCells(String, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    InsertTable(DataTable, String, Int32, Int32): PrivateScope, Public, HideBySig
+    InsertTable(DataTable, Worksheet, Int32, Int32): PrivateScope, Public, HideBySig
+    AddTable(DataTable, String, Int32, Int32): PrivateScope, Public, HideBySig
+    AddTable(DataTable, Worksheet, Int32, Int32): PrivateScope, Public, HideBySig
+    InsertPictures(String, String): PrivateScope, Public, HideBySig
+    InsertActiveChart(XlChartType, String, Int32, Int32, Int32, Int32, XlRowCol): PrivateScope, Public, HideBySig
+    Save(): PrivateScope, Public, HideBySig
+    SaveAs(Object): PrivateScope, Public, HideBySig
+    Close(): PrivateScope, Public, HideBySig
+Struct Microsoft.Office.Core.MsoTriState: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Microsoft.Office.Core.MsoTriState msoTrue = -1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Core.MsoTriState msoFalse = 0 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Core.MsoTriState msoCTrue = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Core.MsoTriState msoTriStateToggle = -3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Core.MsoTriState msoTriStateMixed = -2 : Public, Static, Literal, HasDefault
+Interface Microsoft.Office.Interop.Excel.AppEvents: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Interface Microsoft.Office.Interop.Excel.AppEvents_Event: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Interface Microsoft.Office.Interop.Excel.Application: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    Microsoft.Office.Interop.Excel._Application
+    Microsoft.Office.Interop.Excel.AppEvents_Event
+Interface Microsoft.Office.Interop.Excel.Chart: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    Microsoft.Office.Interop.Excel._Chart
+    Microsoft.Office.Interop.Excel.ChartEvents_Event
+Interface Microsoft.Office.Interop.Excel.ChartEvents: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Interface Microsoft.Office.Interop.Excel.ChartEvents_Event: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Struct Microsoft.Office.Interop.Excel.Constants: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Microsoft.Office.Interop.Excel.Constants xlAll = -4104 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlAutomatic = -4105 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlBoth = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlCenter = -4108 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlChecker = 9 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlCircle = 8 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlCorner = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlCrissCross = 16 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlCross = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDiamond = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDistributed = -4117 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDoubleAccounting = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlFixedValue = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlFormats = -4122 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlGray16 = 17 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlGray8 = 18 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlGrid = 15 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlHigh = -4127 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlInside = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlJustify = -4130 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLightDown = 13 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLightHorizontal = 11 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLightUp = 14 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLightVertical = 12 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLow = -4134 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlManual = -4135 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlMinusValues = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlModule = -4141 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlNextToAxis = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlNone = -4142 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlNotes = -4144 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlOff = -4146 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlOn = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlPercent = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlPlus = 9 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlPlusValues = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSemiGray75 = 10 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlShowLabel = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlShowLabelAndPercent = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlShowPercent = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlShowValue = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSimple = -4154 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSingle = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSingleAccounting = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSolid = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSquare = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlStar = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlStError = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlToolbarButton = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlTriangle = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlGray25 = -4124 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlGray50 = -4125 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlGray75 = -4126 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlBottom = -4107 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLeft = -4131 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlRight = -4152 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlTop = -4160 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xl3DBar = -4099 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xl3DSurface = -4103 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlBar = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlColumn = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlCombination = -4111 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlCustom = -4114 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDefaultAutoFormat = -1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlMaximum = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlMinimum = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlOpaque = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlTransparent = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlBidi = -5000 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLatin = -5001 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlContext = -5002 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLTR = -5003 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlRTL = -5004 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlFullScript = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlPartialScript = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlMixedScript = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlMixedAuthorizedScript = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlVisualCursor = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLogicalCursor = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSystem = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlPartial = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlHindiNumerals = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlBidiCalendar = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlGregorian = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlComplete = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlScale = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlClosed = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlColor1 = 7 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlColor2 = 8 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlColor3 = 9 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlConstants = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlContents = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlBelow = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlCascade = 7 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlCenterAcrossSelection = 7 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlChart4 = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlChartSeries = 17 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlChartShort = 6 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlChartTitles = 18 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlClassic1 = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlClassic2 = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlClassic3 = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xl3DEffects1 = 13 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xl3DEffects2 = 14 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlAbove = 0 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlAccounting1 = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlAccounting2 = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlAccounting3 = 6 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlAccounting4 = 17 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlAdd = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDebugCodePane = 13 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDesktop = 9 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDirect = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDivide = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDoubleClosed = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDoubleOpen = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDoubleQuote = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlEntireChart = 20 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlExcelMenus = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlExtended = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlFill = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlFirst = 0 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlFloating = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlFormula = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlGeneral = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlGridline = 22 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlIcons = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlImmediatePane = 12 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlInteger = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLast = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLastCell = 11 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlList1 = 10 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlList2 = 11 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlList3 = 12 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLocalFormat1 = 15 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLocalFormat2 = 16 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLong = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLotusHelp = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlMacrosheetCell = 7 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlMixed = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlMultiply = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlNarrow = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlNoDocuments = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlOpen = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlOutside = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlReference = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSemiautomatic = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlShort = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSingleQuote = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlStrict = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlSubtract = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlTextBox = 16 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlTiled = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlTitleBar = 8 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlToolbar = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlVisible = 12 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlWatchPane = 11 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlWide = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlWorkbookTab = 6 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlWorksheet4 = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlWorksheetCell = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlWorksheetShort = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlAllExceptBorders = 7 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlLeftToRight = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlTopToBottom = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlVeryHidden = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.Constants xlDrawingObject = 14 : Public, Static, Literal, HasDefault
+Interface Microsoft.Office.Interop.Excel.DocEvents: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Interface Microsoft.Office.Interop.Excel.DocEvents_Event: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Interface Microsoft.Office.Interop.Excel.Range: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    System.Object _Default [System.Object, System.Object] 'get set' : 
+  Methods:
+    get__Default(Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set__Default(Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Merge(Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface Microsoft.Office.Interop.Excel.Shape: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Interface Microsoft.Office.Interop.Excel.Shapes: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Methods:
+    _Default(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    AddPicture(String(In, HasFieldMarshal), MsoTriState(In), MsoTriState(In), Single(In), Single(In), Single(In), Single(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface Microsoft.Office.Interop.Excel.Sheets: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Properties:
+    System.Object _Default [System.Object] 'get ' : 
+  Methods:
+    Add(Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get__Default(Object(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface Microsoft.Office.Interop.Excel.Workbook: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    Microsoft.Office.Interop.Excel._Workbook
+    Microsoft.Office.Interop.Excel.WorkbookEvents_Event
+Interface Microsoft.Office.Interop.Excel.WorkbookEvents: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Interface Microsoft.Office.Interop.Excel.WorkbookEvents_Event: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+Interface Microsoft.Office.Interop.Excel.Workbooks: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+  Methods:
+    Add(Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Close(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface Microsoft.Office.Interop.Excel.Worksheet: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    Microsoft.Office.Interop.Excel._Worksheet
+    Microsoft.Office.Interop.Excel.DocEvents_Event
+Interface Microsoft.Office.Interop.Excel.Worksheets: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    System.Collections.IEnumerable
+Struct Microsoft.Office.Interop.Excel.XlChartLocation: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Microsoft.Office.Interop.Excel.XlChartLocation xlLocationAsNewSheet = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartLocation xlLocationAsObject = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartLocation xlLocationAutomatic = 3 : Public, Static, Literal, HasDefault
+Struct Microsoft.Office.Interop.Excel.XlChartType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Microsoft.Office.Interop.Excel.XlChartType xlColumnClustered = 51 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlColumnStacked = 52 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlColumnStacked100 = 53 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DColumnClustered = 54 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DColumnStacked = 55 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DColumnStacked100 = 56 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlBarClustered = 57 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlBarStacked = 58 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlBarStacked100 = 59 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DBarClustered = 60 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DBarStacked = 61 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DBarStacked100 = 62 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlLineStacked = 63 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlLineStacked100 = 64 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlLineMarkers = 65 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlLineMarkersStacked = 66 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlLineMarkersStacked100 = 67 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPieOfPie = 68 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPieExploded = 69 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DPieExploded = 70 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlBarOfPie = 71 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlXYScatterSmooth = 72 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlXYScatterSmoothNoMarkers = 73 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlXYScatterLines = 74 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlXYScatterLinesNoMarkers = 75 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlAreaStacked = 76 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlAreaStacked100 = 77 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DAreaStacked = 78 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DAreaStacked100 = 79 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlDoughnutExploded = 80 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlRadarMarkers = 81 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlRadarFilled = 82 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlSurface = 83 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlSurfaceWireframe = 84 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlSurfaceTopView = 85 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlSurfaceTopViewWireframe = 86 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlBubble = 15 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlBubble3DEffect = 87 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlStockHLC = 88 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlStockOHLC = 89 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlStockVHLC = 90 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlStockVOHLC = 91 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlCylinderColClustered = 92 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlCylinderColStacked = 93 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlCylinderColStacked100 = 94 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlCylinderBarClustered = 95 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlCylinderBarStacked = 96 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlCylinderBarStacked100 = 97 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlCylinderCol = 98 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlConeColClustered = 99 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlConeColStacked = 100 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlConeColStacked100 = 101 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlConeBarClustered = 102 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlConeBarStacked = 103 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlConeBarStacked100 = 104 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlConeCol = 105 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPyramidColClustered = 106 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPyramidColStacked = 107 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPyramidColStacked100 = 108 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPyramidBarClustered = 109 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPyramidBarStacked = 110 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPyramidBarStacked100 = 111 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPyramidCol = 112 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DColumn = -4100 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlLine = 4 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DLine = -4101 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DPie = -4102 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlPie = 5 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlXYScatter = -4169 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xl3DArea = -4098 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlArea = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlDoughnut = -4120 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlChartType xlRadar = -4151 : Public, Static, Literal, HasDefault
+Struct Microsoft.Office.Interop.Excel.XlRowCol: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Microsoft.Office.Interop.Excel.XlRowCol xlColumns = 2 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlRowCol xlRows = 1 : Public, Static, Literal, HasDefault
+Struct Microsoft.Office.Interop.Excel.XlSaveAsAccessMode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Microsoft.Office.Interop.Excel.XlSaveAsAccessMode xlExclusive = 3 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlSaveAsAccessMode xlNoChange = 1 : Public, Static, Literal, HasDefault
+    Microsoft.Office.Interop.Excel.XlSaveAsAccessMode xlShared = 2 : Public, Static, Literal, HasDefault
+Interface Microsoft.Office.Interop.Excel._Application: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Microsoft.Office.Interop.Excel.Workbooks Workbooks 'get ' : 
+    System.String _Default 'get ' : 
+    Boolean DisplayAlerts 'get set' : 
+  Methods:
+    get_Workbooks(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get__Default(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DisplayAlerts(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_DisplayAlerts(Boolean(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Quit(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface Microsoft.Office.Interop.Excel._Chart: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Microsoft.Office.Interop.Excel.XlChartType ChartType 'get set' : 
+  Methods:
+    Location(XlChartLocation(In), Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_ChartType(XlChartType(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SetSourceData(Range(In, HasFieldMarshal), Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface Microsoft.Office.Interop.Excel._Workbook: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Microsoft.Office.Interop.Excel.Chart ActiveChart 'get ' : 
+    Microsoft.Office.Interop.Excel.Sheets Charts 'get ' : 
+    Microsoft.Office.Interop.Excel.Sheets Worksheets 'get ' : 
+  Methods:
+    get_ActiveChart(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Charts(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Close(Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Save(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_Worksheets(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SaveAs(Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), XlSaveAsAccessMode(In, Optional, HasDefault), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal), Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface Microsoft.Office.Interop.Excel._Worksheet: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.String Name 'get set' : 
+    Microsoft.Office.Interop.Excel.Shapes Shapes 'get ' : 
+    Microsoft.Office.Interop.Excel.Range Cells 'get ' : 
+    Microsoft.Office.Interop.Excel.Range Range [System.Object, System.Object] 'get ' : 
+  Methods:
+    Delete(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Name(String(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Shapes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Cells(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Range(Object(In, HasFieldMarshal), Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
