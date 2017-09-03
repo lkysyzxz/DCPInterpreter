@@ -10,13 +10,16 @@
  *	******
  *	Update:2017.8.31
  *	Update:2017.9.2
+ *	Update:2017.9.3
  */
 #include"AccountingBalance.h"
 #include"LineReader.h"
 #include"SubjectSet.h"
 #include"Tools.h"
 #include"FileCache.h"
+#include"Excel.h"
 #include<string>
+#include<direct.h>
 #include<iostream>
 #include<map>
 #include<exception>
@@ -308,7 +311,7 @@ protected:
 
 	string GetMiddleFileName(string fileName)
 	{
-		int point = STRING_TOOL::Match(0, '.', fileName.c_str());
+		int point = STRING_TOOL::RMatch(fileName.size()-1, '.', fileName.c_str());
 		if (point == -1)
 		{
 			throw exception("文件名缺少后缀");
@@ -317,6 +320,42 @@ protected:
 		{
 			string res = STRING_TOOL::SubString(0, point, fileName.c_str()) + ".dcpm";
 			return res;
+		}
+	}
+
+	string GetExcelFileName(string fileName)
+	{
+		//区分绝对路径和相对路径
+		int symbol = STRING_TOOL::Match(0, ':', fileName.c_str());
+		if (symbol > 0)
+		{//认为是绝对路径
+			int point = STRING_TOOL::RMatch(fileName.size() - 1, '.', fileName.c_str());
+			if (point == -1)
+			{
+				throw exception("文件名缺少后缀");
+			}
+			else
+			{
+				string res = STRING_TOOL::SubString(0, point, fileName.c_str()) + ".xlsx";
+				return res;
+			}
+		}
+		else 
+		{//认为是相对路径
+			int point = STRING_TOOL::RMatch(fileName.size() - 1, '.', fileName.c_str());
+			if (point == -1)
+			{
+				throw exception("文件名缺少后缀");
+			}
+			else
+			{
+				char dirbuffer[256];
+				string dir = _getcwd(dirbuffer, sizeof(dirbuffer));
+				int line = STRING_TOOL::RMatch(point - 1, '\\', fileName.c_str());
+				int startIndex = line == -1 ? 0 : line + 1;
+				string res = dir + "\\" + STRING_TOOL::SubString(startIndex, point, fileName.c_str()) + ".xlsx";
+				return res;
+			}
 		}
 	}
 
@@ -338,7 +377,7 @@ protected:
 		{
 			string firstSubject = ACCOUNTING_TOOL::GetFirstSubject(csubjects[i]);
 			fileCache.PushInteger(-5);
-			fileCache.PushInteger(0); 
+			fileCache.PushInteger(0);
 			fileCache.PushInteger(SubjectSet::SubjectToNumber.find(firstSubject)->second);
 			fileCache.PushDouble(CONVERT_TOOL::StringToDouble(cmoney[i]));
 		}
@@ -393,6 +432,8 @@ public:
 				ClearAllReader();
 			}
 			fileCache.OutputToFile(midFile);
+			string excelFile = GetExcelFileName(filePath);
+			EXCEL_TOOL::OutputDCPMFileToExcel(midFile, excelFile, "QS");
 			fin.close();
 		}
 		catch (exception e)
