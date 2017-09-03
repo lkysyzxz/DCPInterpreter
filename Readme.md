@@ -15,3 +15,9 @@
         * Create FileCache.h
         * Alter class——AccountingInterpreter
         * Change output file format.All process result will ouput as middle file(.dcpm)
+* 2017.9.3
+    * 寒江雪1719
+        * Create Excel.h
+        * Add function OutputDCPMFileToExcel——Read DCPM file and output as excel format.
+        * Add FILE_TOOL in Tool.h.
+        * Add function FileExist.Try to check file exist or not.
