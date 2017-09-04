@@ -20,6 +20,7 @@ void PrintHelp()
 }
 int main(int argc, char *argv[])
 {
+	SubjectSet::InitSubjects();
 	if (argc == 1)
 	{
 		cout << "小葵家账本小程序\n";

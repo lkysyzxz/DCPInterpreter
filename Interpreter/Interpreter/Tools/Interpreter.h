@@ -11,6 +11,7 @@
  *	Update:2017.8.31
  *	Update:2017.9.2
  *	Update:2017.9.3
+ *	Update:2017.9.4
  */
 #include"AccountingBalance.h"
 #include"LineReader.h"
@@ -75,7 +76,6 @@ protected:
 					throw exception(("Money Error In JReader. Line:" + STRING_TOOL::IntegerToString(JReader.GetCurrentLine())).c_str());
 					return -1;
 				}
-				//JReader.PrintData();
 			}
 			else
 			{
@@ -125,7 +125,6 @@ protected:
 			if (ACCOUNTING_TOOL::IsSecondOrderSubject(JSubjects[i]))
 			{
 				string firstSubject = ACCOUNTING_TOOL::GetFirstSubject(JSubjects[i]);
-				//string secondSubject = ACCOUNTING_TOOL::GetSecondSubject(JSubjects[i]);
 				map<string, SubjectProperty>::iterator p = SubjectSet::SubjectTable.find(firstSubject);
 				AccoutingBalance::AddSubjectProperty(p->second.Type, p->second.JF_Symbol, JMoney[i]);
 			}
@@ -164,28 +163,6 @@ protected:
 		{
 			return true;
 		}
-		/*else
-		{
-			for (int i = 0; i < JSubjects.size(); i++)
-			{
-				cout << JSubjects[i];
-				if (i + 1 == JSubjects.size())
-					cout << endl;
-				else
-					cout << ',';
-			}
-			cout << "and" << endl;
-			for (int i = 0; i < DSubjects.size(); i++)
-			{
-				cout << DSubjects[i];
-				if (i + 1 == DSubjects.size())
-					cout << endl;
-				else
-					cout << ',';
-			}
-			cout << "Balance" << endl << endl;
-			return true;
-		}*/
 	}
 
 	bool CopyJCSubjects()
@@ -382,7 +359,9 @@ protected:
 			string firstSubject = ACCOUNTING_TOOL::GetFirstSubject(csubjects[i]);
 			fileCache.PushInteger(-5);
 			fileCache.PushInteger(0);
+			int x = SubjectSet::SubjectToNumber.find(firstSubject)->second;
 			fileCache.PushInteger(SubjectSet::SubjectToNumber.find(firstSubject)->second);
+			double y = CONVERT_TOOL::StringToDouble(cmoney[i]);
 			fileCache.PushDouble(CONVERT_TOOL::StringToDouble(cmoney[i]));
 		}
 		for (int i = 0; i < dsubjects.size(); i++)
@@ -390,7 +369,9 @@ protected:
 			string firstSubject = ACCOUNTING_TOOL::GetFirstSubject(dsubjects[i]);
 			fileCache.PushInteger(-5);
 			fileCache.PushInteger(1);
+			int x = SubjectSet::SubjectToNumber.find(firstSubject)->second;
 			fileCache.PushInteger(SubjectSet::SubjectToNumber.find(firstSubject)->second);
+			double y = CONVERT_TOOL::StringToDouble(dmoney[i]);
 			fileCache.PushDouble(CONVERT_TOOL::StringToDouble(dmoney[i]));
 		}
 		fileCache.PushInteger(-4);
@@ -401,7 +382,6 @@ public:
 	AccountingInterpreter()
 	{
 		currentLine = JReader.GetCurrentLine();
-		SubjectSet::InitSubjects();
 	}
 
 	void InterpreterOperation(string filePath)
@@ -445,6 +425,7 @@ public:
 		}
 		catch (exception e)
 		{
+			fin.close();
 			MESSAGE_TOOL::ErrorNotify(e.what());
 		}
 	}

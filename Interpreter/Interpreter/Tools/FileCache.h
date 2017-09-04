@@ -10,6 +10,7 @@
 *	Email:<lkysyzxz@outlook.com>
 *	******
 *	Update:2017.9.2
+*	Update:2017.9.4
 */
 #include<queue>
 #include<string>
@@ -34,18 +35,23 @@ public:
 
 	FileCache(ifstream &fin)
 	{
-		BYTE tmp;
-		while (fin.peek()!=EOF&&!fin.eof())
+		int len;
+		fin >> len;
+		fin.get();
+		BYTE *buffer = new BYTE[len];
+		fin.read((char*)buffer, len);
+
+		for (int i = 0; i < len; i++)
 		{
-			fin >> tmp;
-			cache.push_back(tmp);
+			cache.push_back(buffer[i]);
 		}
+		delete[] buffer;
 	}
 
 	int ReadInteger()
 	{
 		int res = 0;
-		int tmp_int = 0;
+		unsigned int tmp_int = 0;
 		for (int i = 3; i >= 0; i--)
 		{
 			BYTE tmp = cache.front();
@@ -61,7 +67,7 @@ public:
 	{
 		double x=0.0f;
 		unsigned long long *px = reinterpret_cast<unsigned long long*>(&x);
-		unsigned long long _x = *px;
+		unsigned long long _x = 0;
 		for (int i = 7; i >= 0; i--)
 		{
 			BYTE btmp = cache.front();
@@ -76,9 +82,11 @@ public:
 
 	bool PushInteger(int x)
 	{
+		unsigned int *px = reinterpret_cast<unsigned int*>(&x);
+		unsigned int y = *px;
 		for (int i = 3; i >= 0; i--)
 		{
-			BYTE temp = ((x >> (i * 8)) & 0x000000ff);
+			BYTE temp = ((y >> (i * 8)) & 0x000000ff);
 			cache.push_back(temp);
 		}
 		return true;
@@ -170,15 +178,20 @@ public:
 
 	bool OutputToFile(string fileName)
 	{
-		ofstream fout(fileName, ios::binary | ios::_Nocreate | ios::ate);
+		ofstream fout(fileName, ios::ate|ios::_Nocreate|ios::binary);
 		if (fout.is_open())
 		{
-			while (!cache.empty())
+			BYTE *buffer = new BYTE[cache.size()];
+			fout << cache.size() << '\n';
+			int len = cache.size();
+			for (int i = 0; i < len; i++)
 			{
-				fout << cache.front();
+				buffer[i] = cache.front();
 				cache.pop_front();
 			}
+			fout.write((const char*)buffer, len);
 			fout.close();
+			delete[] buffer;
 			return true;
 		}
 		else
