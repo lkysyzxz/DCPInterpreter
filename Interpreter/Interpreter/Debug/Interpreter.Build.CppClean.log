@@ -1,11 +1,10 @@
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\vc140.pdb
+c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpretermain.obj
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\.netframework,version=v4.0.assemblyattributes.obj
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\.netframework,version=v4.0.assemblyattributes.asm
-c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpretermain.obj
 c:\code\git\dcpinterpreter\interpreter\debug\interpreter.exe
 c:\code\git\dcpinterpreter\interpreter\debug\interpreter.pdb
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.tlog\metagen.write.1.tlog
-c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.vcxprojresolveassemblyreference.cache
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.tlog\cl.command.1.tlog
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.tlog\cl.read.1.tlog
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.tlog\cl.write.1.tlog
@@ -15,4 +14,3 @@ c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.tlog\link.w
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.tlog\metagen.read.1.tlog
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.tlog\exceledit.dll.metagen
 c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.tlog\tzres.dll.bi
-c:\code\git\dcpinterpreter\interpreter\interpreter\debug\interpreter.tlog\wifihelper.dll.bi

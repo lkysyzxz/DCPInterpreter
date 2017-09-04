@@ -101,8 +101,8 @@ public:
 		{
 			std::getline(fin, buffer);
 			m_currentLineNumber++;
-			if (buffer.size() == 0)continue;
-			CopyToCurrentLine(m_currentLine, buffer);
+			if (buffer.size() != 0)
+				CopyToCurrentLine(m_currentLine, buffer);
 		}
 	}
 
